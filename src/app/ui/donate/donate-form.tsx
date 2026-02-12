@@ -27,8 +27,7 @@ export default function DonateForm({ iframeSrc, bannerTitle }: GenericFormProps)
       <div className="flex-1 flex flex-col px-6 lg:px-8 relative">
         <div className="flex-1 w-full max-w-7xl mx-auto relative">
           <iframe
-            id="JotFormIFrame-242065390395964"
-            title="Our Family First - Lt. Colonel Daniel Jacob - Aug 8"
+            title={bannerTitle}
             onLoad={() => window.parent.scrollTo(0, 0)}
             allowTransparency={true}
             allow="geolocation; microphone; camera; fullscreen"

@@ -15,36 +15,23 @@ import {
 } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
+import { NAVIGATION_LINKS, EVENTS } from "@/app/lib/constants";
 
-const navigation = [
-  { name: "Home", href: "/" },
-  { name: "Our Mission", href: "#our-mission" },
-  { name: "Articles", href: "#articles" },
-  { name: "Gallery", href: "#gallery" },
-];
-
-const events = [
-  { name: "August 10th", href: "/aug10" },
-];
+function handleHashNavigation(href: string) {
+  if (!href.startsWith("#")) return;
+  if (window.location.pathname === "/") {
+    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+  } else {
+    window.location.href = `/${href}`;
+  }
+}
 
 export default function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleMenuItemClick = (href: string) => {
     setMobileMenuOpen(false);
-    
-    // If it's a hash link, handle navigation appropriately
-    if (href.startsWith('#')) {
-      // Check if we're on the homepage
-      if (window.location.pathname === '/') {
-        // Same page, just scroll to the section
-        document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
-      } else {
-        // Different page, navigate to homepage with hash
-        window.location.href = `/${href}`;
-      }
-    }
-    // For non-hash links, normal navigation will handle it
+    handleHashNavigation(href);
   };
 
   return (
@@ -66,19 +53,15 @@ export default function NavBar() {
           </Link>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
-          {navigation.map((item) => (
+          {NAVIGATION_LINKS.map((item) => (
             <Link
               key={item.name}
               href={item.href}
               className="text-sm font-semibold leading-6 text-gray-900"
               onClick={(e) => {
-                if (item.href.startsWith('#')) {
+                if (item.href.startsWith("#")) {
                   e.preventDefault();
-                  if (window.location.pathname === '/') {
-                    document.querySelector(item.href)?.scrollIntoView({ behavior: "smooth" });
-                  } else {
-                    window.location.href = `/${item.href}`;
-                  }
+                  handleHashNavigation(item.href);
                 }
               }}
             >
@@ -96,7 +79,7 @@ export default function NavBar() {
             <PopoverPanel className="absolute z-10 mt-3 w-screen max-w-xs transform -translate-x-1/2 left-1/2 bg-white shadow-lg ring-1 ring-black ring-opacity-5 rounded-md">
               {({ close }) => (
                 <div className="p-4">
-                  {events.map((event) => (
+                  {EVENTS.map((event) => (
                     <Link
                       key={event.name}
                       href={event.href}
@@ -166,7 +149,7 @@ export default function NavBar() {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-                {navigation.map((item) => (
+                {NAVIGATION_LINKS.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
@@ -187,7 +170,7 @@ export default function NavBar() {
                   <PopoverPanel className="mt-2 space-y-2 px-2">
                     {({ close }) => (
                       <>
-                        {events.map((event) => (
+                        {EVENTS.map((event) => (
                           <Link
                             key={event.name}
                             href={event.href}
@@ -204,14 +187,6 @@ export default function NavBar() {
                     )}
                   </PopoverPanel>
                 </Popover>
-              </div>
-              <div className="py-6">
-                <Link
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Log in
-                </Link>
               </div>
             </div>
           </div>

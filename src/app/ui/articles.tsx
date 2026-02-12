@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const posts = [
   {
     id: 1,
@@ -69,9 +71,12 @@ export default function Articles() {
             >
               <div className="relative w-full overflow-hidden rounded-2xl">
                 <a href={post.href} className="block">
-                  <img
-                    alt=""
+                  <Image
+                    alt={post.title}
                     src={post.imageUrl}
+                    width={600}
+                    height={400}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2] hover:opacity-90 hover:scale-105 transition-all duration-300 ease-in-out"
                   />
                 </a>

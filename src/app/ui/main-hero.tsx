@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Example() {
+export default function MainHero() {
 
   return (
     <div className="bg-sectionBlue">
@@ -77,6 +77,7 @@ export default function Example() {
                         width={300}
                         height={450}
                         src="/cta-2.jpg"
+                        priority
                         className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                       />
                       <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
@@ -89,6 +90,7 @@ export default function Example() {
                         width={300}
                         height={450}
                         src="/cta3.jpg"
+                        priority
                         className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                       />
                       <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
@@ -99,6 +101,7 @@ export default function Example() {
                         width={300}
                         height={450}
                         src="/img14.jpg"
+                        priority
                         className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                       />
                       <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
@@ -111,6 +114,7 @@ export default function Example() {
                         width={300}
                         height={450}
                         src="/img5.jpg"
+                        priority
                         className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                       />
                       <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
@@ -121,6 +125,7 @@ export default function Example() {
                         width={300}
                         height={450}
                         src="/img6.jpg"
+                        priority
                         className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                       />
                       <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
