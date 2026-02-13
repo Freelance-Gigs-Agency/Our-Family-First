@@ -25,7 +25,7 @@ These skills ensure optimal performance patterns and prevent common anti-pattern
 
 **External Libraries & Documentation:**
 - When working with external libraries like **shadcn** or **Tailwind CSS**, always use **Context7** to retrieve the most up-to-date documentation and code examples
-- This project uses **Tailwind CSS v4** - always specify version 4 when querying documentation
+- This project uses **Tailwind CSS v3** - always specify version 3 when querying documentation
 - Use Context7's `resolve-library-id` and `query-docs` tools for accurate, current library information
 
 ## Tech Stack
