@@ -6,6 +6,28 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Our Family First is a non-profit organization website that offers psycho-educational workshops and couples counseling to help Israeli soldiers reintegrate into family life after experiencing the trauma of war. The site provides information about the organization's mission, articles, gallery, and event registrations.
 
+## Simplicity First
+Prefer simple, straightforward solutions. Any added complexity must be justified—don't over-engineer or add abstractions "just in case." If a simple function solves the problem, don't wrap it in a class.
+
+## Post-Implementation: Code Simplification
+
+After every feature is implemented and tests pass, **run the `code-simplifier` agent** on all changed files. This is a mandatory quality gate — do not consider a feature complete until the simplifier has reviewed the changes.
+
+The agent focuses on clarity, consistency, and maintainability while preserving all functionality. Run it on recently modified code unless explicitly instructed otherwise.
+
+## React & Next.js Best Practices
+
+**Before doing any React or Next.js frontend work**, always load the following skills first:
+- `vercel-react-best-practices` - React and Next.js performance optimization guidelines from Vercel Engineering
+- `next-best-practices` - Next.js file conventions, RSC boundaries, data patterns, async APIs, metadata, error handling, route handlers, image/font optimization, and bundling
+
+These skills ensure optimal performance patterns and prevent common anti-patterns in React components and Next.js applications.
+
+**External Libraries & Documentation:**
+- When working with external libraries like **shadcn** or **Tailwind CSS**, always use **Context7** to retrieve the most up-to-date documentation and code examples
+- This project uses **Tailwind CSS v4** - always specify version 4 when querying documentation
+- Use Context7's `resolve-library-id` and `query-docs` tools for accurate, current library information
+
 ## Tech Stack
 
 - **Framework**: Next.js 14.2.5 with App Router
