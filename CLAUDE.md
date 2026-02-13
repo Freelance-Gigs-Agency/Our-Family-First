@@ -33,9 +33,13 @@ These skills ensure optimal performance patterns and prevent common anti-pattern
 - **Framework**: Next.js 14.2.5 with App Router
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
-- **UI Components**: Headless UI (@headlessui/react)
+- **UI Components**:
+  - **shadcn/ui** - Primary component library for all new UI development
+  - Headless UI (@headlessui/react) - Legacy components (existing code only)
 - **Icons**: Heroicons, FontAwesome
 - **Forms**: JotForm embeds via iframes
+
+**Important**: All new UI components must use shadcn/ui. Do not use Headless UI for new development.
 
 ## Development Commands
 
