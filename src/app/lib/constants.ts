@@ -6,5 +6,5 @@ export const NAVIGATION_LINKS = [
 ] as const;
 
 export const EVENTS = [
-  { name: "August 10th", href: "/aug10" },
+  { name: "Event Registration", href: "/event" },
 ] as const;
